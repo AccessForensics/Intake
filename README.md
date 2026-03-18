@@ -2,17 +2,19 @@
 
 Internal use only.
 
-This repository is a clean-room implementation target for **AF Sections 1 to 10 intake feasibility gating**.
+This repository is a clean-room implementation target for AF Sections 1 to 10 intake feasibility gating.
+
+It is a controlled implementation contract for AFDM intake, not a general starter repo and not a flexible engineering sandbox.
 
 Its purpose is narrow and locked:
 
-- implement intake as a **bounded feasibility gate**
+- implement intake as a bounded feasibility gate
 - determine whether a matter qualifies for full forensic execution under controlled browser contexts
-- use only the **complaint or demand materials provided** as the scope anchor
+- use only the complaint or demand materials provided as the scope anchor
 - produce exactly one governed intake determination per matter
 - enforce the locked machine rules, tests, fixtures, and validation surfaces required by the intake layer set
 
-This repository is **not** a compliance audit tool, defect inventory, remediation guide, certification system, legal-opinion engine, or full-execution repo.
+This repository is not a compliance audit tool, defect inventory, remediation guide, certification system, legal-opinion engine, or full-execution repo.
 
 ## Controlling Authority
 
@@ -27,6 +29,7 @@ This repo is governed only by the current intake authority set:
 No older intake doctrine, no stale template file, no legacy enum surface, and no prior intake implementation may override these sources.
 
 If any conflict, ambiguity, or drift is found:
+
 - do not invent fields, labels, procedures, or output forms
 - do not patch conflicts by assumption
 - surface the issue explicitly and fail closed where required
@@ -54,9 +57,10 @@ This repo exists to implement the intake system defined by the controlling autho
 
 ## Locked Intake Boundary
 
-Intake outputs **eligibility only**.
+Intake outputs eligibility only.
 
 External-facing intake output must not disclose or imply:
+
 - number of runs performed
 - number of confirmations reached
 - observed or not observed counts
@@ -68,6 +72,7 @@ External-facing intake output must not disclose or imply:
 External-facing intake output must remain mechanically neutral.
 
 Banned framing includes, but is not limited to:
+
 - pass
 - fail
 - compliant
@@ -81,6 +86,7 @@ Banned framing includes, but is not limited to:
 - adversarial posture
 
 When external output describes scope and context, it must use the exact locked terms:
+
 - `complaint or demand materials provided`
 - `specific website conditions asserted in those materials`
 - `bounded execution parameters`
@@ -143,7 +149,7 @@ This repo is not complete without the required fixture matrix, including at mini
 - Mobile-only eligible matter
 - Mobile eligible with Desktop constrained
 - Not eligible, generic
-- Not eligible, botmitigation
+- Not eligible, BOTMITIGATION
 - Not eligible, constraints other
 - Note-gated constrained run
 - Invalid note on observed run
@@ -204,8 +210,24 @@ fixtures/
 
 delivery_artifacts/
   intake/
+```
 
-  ## Status
+## Build Discipline
+
+This is a clean-room intake repo.
+
+That means:
+
+- no inherited legacy intake code unless expressly approved
+- no stale template carryover
+- no repo drift by convenience
+- no unsupported doctrine claims
+- no invented labels or enums
+- no close-enough external wording
+
+If something is not supported, document it explicitly in Appendix F format and fail closed where the governing docs require it.
+
+## Status
 
 Current status: scaffold / clean-room intake implementation target.
 
