@@ -204,3 +204,9 @@ fixtures/
 
 delivery_artifacts/
   intake/
+
+  ## Status
+
+Current status: scaffold / clean-room intake implementation target.
+
+Nothing in this repository should be treated as production-complete until the locked completion standard above has been satisfied.
