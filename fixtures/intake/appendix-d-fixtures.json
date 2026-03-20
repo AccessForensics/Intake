@@ -6,21 +6,24 @@
       "appendix_d_reference": "D.1",
       "purpose": "proves Desktop-only determination path",
       "expected_state": "Template 2",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d1_desktop_only_eligible.json"
     },
     {
       "fixture_id": "fixture_2_desktop_and_mobile_eligible",
       "appendix_d_reference": "D.2",
       "purpose": "proves dual-baseline eligibility",
       "expected_state": "Template 1",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d2_desktop_and_mobile_eligible.json"
     },
     {
       "fixture_id": "fixture_3_desktop_eligible_mobile_constrained",
       "appendix_d_reference": "D.3",
       "purpose": "proves Template 3 guardrail",
       "expected_state": "Template 3",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d3_desktop_eligible_mobile_constrained.json"
     },
     {
       "fixture_id": "fixture_4_mobile_only_eligible",

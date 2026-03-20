@@ -1,0 +1,50 @@
+{
+  "fixture_id": "fixture_2_desktop_and_mobile_eligible",
+  "matter_id": "AF-2026-D2",
+  "matter_scope": "dual",
+  "scope_anchor_reference": "Complaint PDF dated 2026-03-19, pp. 5-6",
+  "created_context_basis": "generic_accessibility_allegation",
+  "generated_at_local": "2026-03-19T12:10:00-04:00",
+  "generated_at_epoch_ms": 1710864600000,
+  "complaint_anchors": [
+    {
+      "anchorType": "pagebulletrange",
+      "pageBulletRange": "5:1-2",
+      "anchorText": "- Missing skip link`n- Missing form labels"
+    }
+  ],
+  "expected_sequence": [
+    { "run_unit_id": "RU-001", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-001", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "mobile_baseline" }
+  ],
+  "run_execution_plan": [
+    {
+      "run_id": "RUN-001",
+      "run_unit_index": 0,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Observed as asserted",
+      "constraint_class": "",
+      "mechanical_note": "",
+      "run_start_local": "2026-03-19T12:10:00-04:00",
+      "run_start_epoch_ms": 5000,
+      "run_end_local": "2026-03-19T12:10:01-04:00",
+      "run_end_epoch_ms": 6000
+    },
+    {
+      "run_id": "RUN-002",
+      "run_unit_index": 0,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Not observed as asserted",
+      "constraint_class": "",
+      "mechanical_note": "",
+      "run_start_local": "2026-03-19T12:10:02-04:00",
+      "run_start_epoch_ms": 7000,
+      "run_end_local": "2026-03-19T12:10:03-04:00",
+      "run_end_epoch_ms": 8000
+    }
+  ],
+  "expected_determination_template": "DETERMINATION: ELIGIBLE FOR DESKTOP AND MOBILE TECHNICAL RECORD BUILD",
+  "expected_stop_basis": "sufficiency_reached"
+}

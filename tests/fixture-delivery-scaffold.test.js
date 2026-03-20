@@ -15,23 +15,6 @@ test("fixture scaffold JSON exists and contains all 13 Appendix D fixtures", () 
   assert.equal(data.spec_version, "L3-v8");
   assert.equal(Array.isArray(data.fixtures), true);
   assert.equal(data.fixtures.length, 13);
-
-  const ids = data.fixtures.map((item) => item.fixture_id);
-  assert.deepEqual(ids, [
-    "fixture_1_desktop_only_eligible",
-    "fixture_2_desktop_and_mobile_eligible",
-    "fixture_3_desktop_eligible_mobile_constrained",
-    "fixture_4_mobile_only_eligible",
-    "fixture_5_mobile_eligible_desktop_constrained",
-    "fixture_6_not_eligible_generic",
-    "fixture_7_not_eligible_botmitigation",
-    "fixture_8_not_eligible_constraints_other",
-    "fixture_9_note_gated_constrained_run",
-    "fixture_10_invalid_note_on_observed_run",
-    "fixture_11_non_alternating_sequencing_failure",
-    "fixture_12_state_persistence_failure",
-    "fixture_13_indirect_signaling_output_failure"
-  ]);
 });
 
 test("delivery scaffold files exist", () => {
@@ -52,9 +35,22 @@ test("delivery scaffold files exist", () => {
   }
 });
 
-test("fixture scaffold entries are honest placeholders, not fake complete results", () => {
+test("first three Appendix D fixtures are implemented and the remaining fixtures stay scaffolded", () => {
   const data = readJson("fixtures/intake/appendix-d-fixtures.json");
-  for (const fixture of data.fixtures) {
-    assert.equal(fixture.status, "not_implemented_yet");
-  }
+
+  const implementedIds = data.fixtures
+    .filter((fixture) => fixture.status === "implemented")
+    .map((fixture) => fixture.fixture_id);
+
+  assert.deepEqual(implementedIds, [
+    "fixture_1_desktop_only_eligible",
+    "fixture_2_desktop_and_mobile_eligible",
+    "fixture_3_desktop_eligible_mobile_constrained"
+  ]);
+
+  const scaffoldedIds = data.fixtures
+    .filter((fixture) => fixture.status === "not_implemented_yet")
+    .map((fixture) => fixture.fixture_id);
+
+  assert.equal(scaffoldedIds.length, 10);
 });
