@@ -1,105 +1,98 @@
 "use strict";
 
-const CREATED_CONTEXT_BASIS = Object.freeze({
-  GENERIC_ACCESSIBILITY_ALLEGATION: "generic_accessibility_allegation",
-  MATERIALS_CABINED_DESKTOP_ONLY: "materials_cabined_desktop_only",
-  MATERIALS_CABINED_MOBILE_ONLY: "materials_cabined_mobile_only",
-  CONSTRAINED_PEER_BASELINE: "constrained_peer_baseline",
-});
-
-function toRunUnitId(index) {
-  return `RU-${String(index).padStart(3, "0")}`;
+function pad3(value) {
+  return String(value).padStart(3, "0");
 }
 
-function normalizeCreatedContextBasis(value) {
-  const allowed = new Set(Object.values(CREATED_CONTEXT_BASIS));
-  if (!allowed.has(value)) {
-    throw new Error(`INVALID_CREATED_CONTEXT_BASIS: ${value}`);
-  }
-  return value;
-}
-
-function normalizeScope(scopeOptions) {
-  if (!scopeOptions || typeof scopeOptions !== "object") {
-    throw new Error("RUN_UNIT_SCOPE_OPTIONS_REQUIRED");
-  }
-
-  const desktopInScope = scopeOptions.desktopInScope === true;
-  const mobileInScope = scopeOptions.mobileInScope === true;
-
-  if (!desktopInScope && !mobileInScope) {
-    throw new Error("RUN_UNIT_SCOPE_INVALID");
-  }
-
-  return {
-    desktopinscope: desktopInScope,
-    mobileinscope: mobileInScope,
-    createdcontextbasis: normalizeCreatedContextBasis(scopeOptions.createdContextBasis),
-  };
-}
-
-function normalizeAnchorType(value) {
-  const safe = String(value || "").trim().toLowerCase();
-  if (safe === "page_bullet_range" || safe === "pagebulletrange") {
-    return "page_bullet_range";
-  }
-  if (safe === "page_paragraph_range" || safe === "pageparagraphrange") {
-    return "page_paragraph_range";
-  }
-  throw new Error(`INVALID_COMPLAINT_GROUP_ANCHOR_TYPE: ${value}`);
-}
-
-function splitAssertedConditions(anchor) {
-  const anchorType = normalizeAnchorType(anchor.anchortype);
-  const rawText = String(anchor.anchortext || "").replace(/\r\n/g, "\n").trim();
-
-  if (!rawText) {
-    throw new Error("ASSERTED_CONDITION_TEXT_REQUIRED");
-  }
-
-  if (anchorType === "page_paragraph_range") {
-    return [rawText];
-  }
-
-  const lines = rawText
+function normalizeCandidateText(text) {
+  return String(text || "")
+    .replace(/\r\n/g, "\n")
     .split("\n")
-    .map((line) => line.replace(/^\s*[-*•]+\s*/, "").trim())
-    .filter((line) => line.length > 0);
-
-  if (lines.length === 0) {
-    throw new Error("ASSERTED_CONDITION_TEXT_REQUIRED");
-  }
-
-  return lines;
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => line.replace(/^[-*]\s+/, "").replace(/^\d+[.)]\s+/, ""))
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-function buildRunUnitsFromAnchors(anchorsInput, scopeOptions) {
-  if (!Array.isArray(anchorsInput) || anchorsInput.length === 0) {
-    throw new Error("COMPLAINT_GROUP_ANCHORS_REQUIRED");
+function splitAnchorTextIntoCandidates(anchorText) {
+  const raw = String(anchorText || "").replace(/\r\n/g, "\n");
+
+  const linePieces = raw
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const firstPass = [];
+  for (const piece of linePieces) {
+    const semicolonSplit = piece
+      .split(";")
+      .map((part) => part.trim())
+      .filter(Boolean);
+
+    for (const part of semicolonSplit) {
+      firstPass.push(part);
+    }
   }
 
-  const scope = normalizeScope(scopeOptions);
-  const runUnits = [];
-  let runUnitIndex = 1;
+  return firstPass
+    .map((part) => normalizeCandidateText(part))
+    .filter(Boolean);
+}
 
-  for (const anchor of anchorsInput) {
-    const complaintGroupAnchorId = String(anchor.complaintgroupanchorid || "").trim();
-    if (!complaintGroupAnchorId) {
-      throw new Error("COMPLAINT_GROUP_ANCHOR_ID_REQUIRED");
+function assertAtomicCandidate(candidateText) {
+  const obviousBlend = /;\s*|\s+\/\s+|\s+\band\b\s+/i;
+  if (obviousBlend.test(candidateText)) {
+    throw new Error(`NON_ATOMIC_ASSERTED_CONDITION: ${candidateText}`);
+  }
+}
+
+function buildRunUnitsFromAnchors(anchors, options = {}) {
+  if (!Array.isArray(anchors)) {
+    throw new Error("NORMALIZED_ANCHORS_ARRAY_REQUIRED");
+  }
+
+  const desktopInScope = options.desktopInScope !== false;
+  const mobileInScope = options.mobileInScope === true;
+  const createdContextBasis = String(
+    options.createdContextBasis || "generic_accessibility_allegation"
+  ).trim();
+
+  const runUnits = [];
+  let counter = 0;
+
+  for (const anchor of anchors) {
+    const anchorId = String(anchor.complaintgroupanchorid || "").trim();
+    const anchorText = String(anchor.anchortext || "").trim();
+
+    if (!anchorId) {
+      throw new Error("NORMALIZED_ANCHOR_MISSING_ID");
     }
 
-    const assertedConditions = splitAssertedConditions(anchor);
+    if (!anchorText) {
+      throw new Error(`NORMALIZED_ANCHOR_MISSING_TEXT: ${anchorId}`);
+    }
 
-    for (const assertedConditionText of assertedConditions) {
-      runUnits.push({
-        rununitid: toRunUnitId(runUnitIndex),
-        complaintgroupanchorid: complaintGroupAnchorId,
-        assertedconditiontext: assertedConditionText,
-        desktopinscope: scope.desktopinscope,
-        mobileinscope: scope.mobileinscope,
-        createdcontextbasis: scope.createdcontextbasis,
-      });
-      runUnitIndex += 1;
+    const candidates = splitAnchorTextIntoCandidates(anchorText);
+    if (candidates.length === 0) {
+      throw new Error(`NO_ASSERTED_CONDITION_CANDIDATES: ${anchorId}`);
+    }
+
+    for (const candidate of candidates) {
+      assertAtomicCandidate(candidate);
+      counter += 1;
+
+      runUnits.push(
+        Object.freeze({
+          rununitid: `RU-${pad3(counter)}`,
+          complaintgroupanchorid: anchorId,
+          assertedconditiontext: candidate,
+          desktopinscope: desktopInScope,
+          mobileinscope: mobileInScope,
+          createdcontextbasis: createdContextBasis,
+        })
+      );
     }
   }
 
@@ -107,6 +100,6 @@ function buildRunUnitsFromAnchors(anchorsInput, scopeOptions) {
 }
 
 module.exports = Object.freeze({
-  CREATED_CONTEXT_BASIS,
   buildRunUnitsFromAnchors,
+  splitAnchorTextIntoCandidates,
 });

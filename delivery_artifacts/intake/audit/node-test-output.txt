@@ -1,52 +1,14 @@
 TAP version 13
 # Subtest: D.1 desktop-only eligible fixture passes end-to-end
-not ok 1 - D.1 desktop-only eligible fixture passes end-to-end
+ok 1 - D.1 desktop-only eligible fixture passes end-to-end
   ---
-  duration_ms: 2.1616
+  duration_ms: 3.2016
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-first-fixtures.test.js:168:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    Expected values to be strictly deep-equal:
-    + actual - expected
-    
-      [
-        {
-          context_id: 'desktop_baseline',
-          run_unit_id: 'RU-001'
-        },
-    -   {
-    -     context_id: 'desktop_baseline',
-    -     run_unit_id: 'RU-002'
-    -   }
-      ]
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-    1:
-      run_unit_id: 'RU-002'
-      context_id: 'desktop_baseline'
-  actual:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-  operator: 'deepStrictEqual'
-  stack: |-
-    runFixture (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-first-fixtures.test.js:92:10)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-first-fixtures.test.js:169:3)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.start (node:internal/test_runner/test:944:17)
-    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
   ...
 # Subtest: D.2 desktop and mobile eligible fixture passes end-to-end
 not ok 2 - D.2 desktop and mobile eligible fixture passes end-to-end
   ---
-  duration_ms: 0.7606
+  duration_ms: 1.434
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-first-fixtures.test.js:172:1'
   failureType: 'testCodeFailure'
@@ -106,71 +68,15 @@ not ok 2 - D.2 desktop and mobile eligible fixture passes end-to-end
     async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
   ...
 # Subtest: D.3 desktop eligible mobile constrained fixture passes end-to-end
-not ok 3 - D.3 desktop eligible mobile constrained fixture passes end-to-end
+ok 3 - D.3 desktop eligible mobile constrained fixture passes end-to-end
   ---
-  duration_ms: 0.3953
+  duration_ms: 0.7687
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-first-fixtures.test.js:176:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    Expected values to be strictly deep-equal:
-    + actual - expected
-    ... Skipped lines
-    
-      [
-        {
-          context_id: 'desktop_baseline',
-          run_unit_id: 'RU-001'
-        },
-    ...
-        },
-    -   {
-    -     context_id: 'desktop_baseline',
-    -     run_unit_id: 'RU-002'
-    -   },
-    -   {
-    -     context_id: 'mobile_baseline',
-    -     run_unit_id: 'RU-002'
-    -   }
-      ]
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-    1:
-      run_unit_id: 'RU-001'
-      context_id: 'mobile_baseline'
-    2:
-      run_unit_id: 'RU-002'
-      context_id: 'desktop_baseline'
-    3:
-      run_unit_id: 'RU-002'
-      context_id: 'mobile_baseline'
-  actual:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-    1:
-      run_unit_id: 'RU-001'
-      context_id: 'mobile_baseline'
-  operator: 'deepStrictEqual'
-  stack: |-
-    runFixture (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-first-fixtures.test.js:92:10)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-first-fixtures.test.js:177:3)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: D.6 generic ineligible fixture passes end-to-end
 not ok 4 - D.6 generic ineligible fixture passes end-to-end
   ---
-  duration_ms: 2.6339
+  duration_ms: 2.8138
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-ineligible-fixtures.test.js:165:1'
   failureType: 'testCodeFailure'
@@ -272,7 +178,7 @@ not ok 4 - D.6 generic ineligible fixture passes end-to-end
 # Subtest: D.7 botmitigation ineligible fixture passes end-to-end
 not ok 5 - D.7 botmitigation ineligible fixture passes end-to-end
   ---
-  duration_ms: 0.5354
+  duration_ms: 0.6708
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-ineligible-fixtures.test.js:169:1'
   failureType: 'testCodeFailure'
@@ -376,7 +282,7 @@ not ok 5 - D.7 botmitigation ineligible fixture passes end-to-end
 # Subtest: D.8 constraints-other ineligible fixture passes end-to-end
 not ok 6 - D.8 constraints-other ineligible fixture passes end-to-end
   ---
-  duration_ms: 0.3992
+  duration_ms: 0.4238
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-ineligible-fixtures.test.js:173:1'
   failureType: 'testCodeFailure'
@@ -480,37 +386,37 @@ not ok 6 - D.8 constraints-other ineligible fixture passes end-to-end
 # Subtest: D.9 note-gated constrained run fixture passes through run record and note rule creation
 ok 7 - D.9 note-gated constrained run fixture passes through run record and note rule creation
   ---
-  duration_ms: 0.9359
+  duration_ms: 0.9635
   type: 'test'
   ...
 # Subtest: D.10 invalid note on observed run fixture fails as expected
 ok 8 - D.10 invalid note on observed run fixture fails as expected
   ---
-  duration_ms: 0.5074
+  duration_ms: 0.5065
   type: 'test'
   ...
 # Subtest: D.11 non-alternating sequencing fixture detects mismatch
 ok 9 - D.11 non-alternating sequencing fixture detects mismatch
   ---
-  duration_ms: 0.4507
+  duration_ms: 0.4698
   type: 'test'
   ...
 # Subtest: D.12 state persistence failure fixture produces isolation failure classification
 ok 10 - D.12 state persistence failure fixture produces isolation failure classification
   ---
-  duration_ms: 0.2911
+  duration_ms: 0.3134
   type: 'test'
   ...
 # Subtest: D.13 indirect signaling output fixture blocks release
 ok 11 - D.13 indirect signaling output fixture blocks release
   ---
-  duration_ms: 1.0008
+  duration_ms: 1.0905
   type: 'test'
   ...
 # Subtest: D.4 mobile-only eligible fixture passes end-to-end
 not ok 12 - D.4 mobile-only eligible fixture passes end-to-end
   ---
-  duration_ms: 2.146
+  duration_ms: 2.7954
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-second-fixtures.test.js:168:1'
   failureType: 'testCodeFailure'
@@ -552,103 +458,27 @@ not ok 12 - D.4 mobile-only eligible fixture passes end-to-end
     startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
   ...
 # Subtest: D.5 mobile eligible desktop constrained fixture passes end-to-end
-not ok 13 - D.5 mobile eligible desktop constrained fixture passes end-to-end
+ok 13 - D.5 mobile eligible desktop constrained fixture passes end-to-end
   ---
-  duration_ms: 0.5884
+  duration_ms: 1.83
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\appendix-d-second-fixtures.test.js:172:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    Expected values to be strictly deep-equal:
-    + actual - expected
-    ... Skipped lines
-    
-      [
-        {
-          context_id: 'desktop_baseline',
-          run_unit_id: 'RU-001'
-        },
-    ...
-        },
-    -   {
-    -     context_id: 'desktop_baseline',
-    -     run_unit_id: 'RU-002'
-    -   },
-    -   {
-    -     context_id: 'mobile_baseline',
-    -     run_unit_id: 'RU-002'
-    -   }
-      ]
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-    1:
-      run_unit_id: 'RU-001'
-      context_id: 'mobile_baseline'
-    2:
-      run_unit_id: 'RU-002'
-      context_id: 'desktop_baseline'
-    3:
-      run_unit_id: 'RU-002'
-      context_id: 'mobile_baseline'
-  actual:
-    0:
-      run_unit_id: 'RU-001'
-      context_id: 'desktop_baseline'
-    1:
-      run_unit_id: 'RU-001'
-      context_id: 'mobile_baseline'
-  operator: 'deepStrictEqual'
-  stack: |-
-    runFixture (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-second-fixtures.test.js:92:10)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\appendix-d-second-fixtures.test.js:173:3)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
   ...
 # Subtest: normalizeComplaintAnchors normalizes paragraph and bullet anchors
 ok 14 - normalizeComplaintAnchors normalizes paragraph and bullet anchors
   ---
-  duration_ms: 1.0189
+  duration_ms: 0.9505
   type: 'test'
   ...
 # Subtest: buildRunUnitsFromAnchors creates one RUNUNIT per semicolon-separated asserted condition
-not ok 15 - buildRunUnitsFromAnchors creates one RUNUNIT per semicolon-separated asserted condition
+ok 15 - buildRunUnitsFromAnchors creates one RUNUNIT per semicolon-separated asserted condition
   ---
-  duration_ms: 0.7189
+  duration_ms: 0.4407
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\complaint-normalizer.test.js:39:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    Expected values to be strictly equal:
-    
-    1 !== 2
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected: 2
-  actual: 1
-  operator: 'strictEqual'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\complaint-normalizer.test.js:54:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
   ...
 # Subtest: buildRunUnitsFromAnchors creates one RUNUNIT per bullet-line asserted condition
 not ok 16 - buildRunUnitsFromAnchors creates one RUNUNIT per bullet-line asserted condition
   ---
-  duration_ms: 0.2557
+  duration_ms: 0.5637
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\complaint-normalizer.test.js:75:1'
   failureType: 'testCodeFailure'
@@ -672,211 +502,196 @@ not ok 16 - buildRunUnitsFromAnchors creates one RUNUNIT per bullet-line asserte
     async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: buildRunUnitsFromAnchors rejects obvious blended asserted conditions that remain unsplit
-not ok 17 - buildRunUnitsFromAnchors rejects obvious blended asserted conditions that remain unsplit
+ok 17 - buildRunUnitsFromAnchors rejects obvious blended asserted conditions that remain unsplit
   ---
-  duration_ms: 0.2462
+  duration_ms: 0.2927
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\complaint-normalizer.test.js:98:1'
-  failureType: 'testCodeFailure'
-  error: 'Missing expected exception.'
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-  operator: 'throws'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\complaint-normalizer.test.js:107:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: normalizeComplaintAnchors rejects missing anchor reference
 ok 18 - normalizeComplaintAnchors rejects missing anchor reference
   ---
-  duration_ms: 0.2218
+  duration_ms: 0.0946
   type: 'test'
   ...
 # Subtest: locked context profiles match baseline and reflow values
 ok 19 - locked context profiles match baseline and reflow values
   ---
-  duration_ms: 0.9592
+  duration_ms: 0.8905
   type: 'test'
   ...
 # Subtest: manifest creation resolves run, run-unit, anchor, and determination references
 ok 20 - manifest creation resolves run, run-unit, anchor, and determination references
   ---
-  duration_ms: 0.3534
+  duration_ms: 0.3212
   type: 'test'
   ...
 # Subtest: manifest rejects unresolved run-unit references
 ok 21 - manifest rejects unresolved run-unit references
   ---
-  duration_ms: 0.3133
+  duration_ms: 0.3048
   type: 'test'
   ...
 # Subtest: manifest rejects unresolved determination matter mismatch
 ok 22 - manifest rejects unresolved determination matter mismatch
   ---
-  duration_ms: 0.1081
+  duration_ms: 0.1028
   type: 'test'
   ...
 # Subtest: manifest requires structured internal timing metadata
 ok 23 - manifest requires structured internal timing metadata
   ---
-  duration_ms: 0.0902
+  duration_ms: 0.0893
   type: 'test'
   ...
 # Subtest: routes Template 1 for dual-scope eligible matter
 ok 24 - routes Template 1 for dual-scope eligible matter
   ---
-  duration_ms: 0.9241
+  duration_ms: 0.9247
   type: 'test'
   ...
 # Subtest: routes Template 2 for desktop-only eligible matter
 ok 25 - routes Template 2 for desktop-only eligible matter
   ---
-  duration_ms: 0.1077
+  duration_ms: 0.1138
   type: 'test'
   ...
 # Subtest: routes Template 3 for desktop-eligible mobile-constrained matter
 ok 26 - routes Template 3 for desktop-eligible mobile-constrained matter
   ---
-  duration_ms: 0.7262
+  duration_ms: 0.6894
   type: 'test'
   ...
 # Subtest: routes Template 4 for mobile-only eligible matter
 ok 27 - routes Template 4 for mobile-only eligible matter
   ---
-  duration_ms: 0.1422
+  duration_ms: 0.1399
   type: 'test'
   ...
 # Subtest: routes Template 5 for mobile-eligible desktop-constrained matter
 ok 28 - routes Template 5 for mobile-eligible desktop-constrained matter
   ---
-  duration_ms: 0.1442
+  duration_ms: 0.1845
   type: 'test'
   ...
 # Subtest: routes Template 6 for non-constraint generic ineligibility
 ok 29 - routes Template 6 for non-constraint generic ineligibility
   ---
-  duration_ms: 0.1245
+  duration_ms: 0.1488
   type: 'test'
   ...
 # Subtest: routes Template 7 for BOTMITIGATION-driven ineligibility
 ok 30 - routes Template 7 for BOTMITIGATION-driven ineligibility
   ---
-  duration_ms: 0.084
+  duration_ms: 0.0879
   type: 'test'
   ...
 # Subtest: routes Template 8 for non-BOT constraint-driven ineligibility
 ok 31 - routes Template 8 for non-BOT constraint-driven ineligibility
   ---
-  duration_ms: 0.0804
+  duration_ms: 0.0784
   type: 'test'
   ...
 # Subtest: rejects mixed BOTMITIGATION and non-BOT constraint-driven ineligibility in this slice
 ok 32 - rejects mixed BOTMITIGATION and non-BOT constraint-driven ineligibility in this slice
   ---
-  duration_ms: 0.4822
+  duration_ms: 0.4547
   type: 'test'
   ...
 # Subtest: rejects matter-level note on non-Template-3-or-5 determination creation
 ok 33 - rejects matter-level note on non-Template-3-or-5 determination creation
   ---
-  duration_ms: 0.2942
+  duration_ms: 0.287
   type: 'test'
   ...
 # Subtest: valid minimal determination output passes automated checks
 ok 34 - valid minimal determination output passes automated checks
   ---
-  duration_ms: 1.4813
+  duration_ms: 1.3185
   type: 'test'
   ...
 # Subtest: forbidden disclosure fails validation
 ok 35 - forbidden disclosure fails validation
   ---
-  duration_ms: 0.4736
+  duration_ms: 0.449
   type: 'test'
   ...
 # Subtest: forbidden language fails validation
 ok 36 - forbidden language fails validation
   ---
-  duration_ms: 0.2106
+  duration_ms: 0.2017
   type: 'test'
   ...
 # Subtest: mandatory exact terms are required when scope and context are described
 ok 37 - mandatory exact terms are required when scope and context are described
   ---
-  duration_ms: 0.1785
+  duration_ms: 0.1638
   type: 'test'
   ...
 # Subtest: matter-level context disclosure rejects paraphrase
 ok 38 - matter-level context disclosure rejects paraphrase
   ---
-  duration_ms: 0.1761
+  duration_ms: 0.1721
   type: 'test'
   ...
 # Subtest: per-run context leakage fails validation
 ok 39 - per-run context leakage fails validation
   ---
-  duration_ms: 0.1342
+  duration_ms: 0.1235
   type: 'test'
   ...
 # Subtest: exact indirect-signaling phrase fails validation
 ok 40 - exact indirect-signaling phrase fails validation
   ---
-  duration_ms: 0.1274
+  duration_ms: 0.1235
   type: 'test'
   ...
 # Subtest: functional-equivalent signaling requires reviewer clearance
 ok 41 - functional-equivalent signaling requires reviewer clearance
   ---
-  duration_ms: 0.1101
+  duration_ms: 0.1069
   type: 'test'
   ...
 # Subtest: anti-hedging risk requires reviewer clearance
 ok 42 - anti-hedging risk requires reviewer clearance
   ---
-  duration_ms: 0.3021
+  duration_ms: 0.3046
   type: 'test'
   ...
 # Subtest: matter-level note compliance fails if note is not one sentence
 ok 43 - matter-level note compliance fails if note is not one sentence
   ---
-  duration_ms: 0.3209
+  duration_ms: 0.3059
   type: 'test'
   ...
 # Subtest: fixture scaffold JSON exists and contains all 13 Appendix D fixtures
 ok 44 - fixture scaffold JSON exists and contains all 13 Appendix D fixtures
   ---
-  duration_ms: 0.9291
+  duration_ms: 0.8962
   type: 'test'
   ...
 # Subtest: all 13 Appendix D fixtures are now implemented
 ok 45 - all 13 Appendix D fixtures are now implemented
   ---
-  duration_ms: 0.2882
+  duration_ms: 0.2749
   type: 'test'
   ...
 # Subtest: delivery scaffold files still exist
 ok 46 - delivery scaffold files still exist
   ---
-  duration_ms: 0.5726
+  duration_ms: 0.5723
   type: 'test'
   ...
 # Subtest: template spec loads and validates
 not ok 47 - template spec loads and validates
   ---
-  duration_ms: 0.7938
+  duration_ms: 0.7839
   type: 'test'
   location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:13:1'
   failureType: 'testCodeFailure'
   error: 'TEMPLATE_SPEC_MISSING_INTERNAL_NOTE_RULE'
   code: 'ERR_TEST_FAILURE'
   stack: |-
-    validateTemplateSpec (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\src\intake\template-validator.js:43:11)
+    validateTemplateSpec (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\src\intake\template-validator.js:25:11)
     TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:15:16)
     Test.runInAsyncScope (node:async_hooks:214:14)
     Test.run (node:internal/test_runner/test:1047:25)
@@ -884,322 +699,197 @@ not ok 47 - template spec loads and validates
     startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
   ...
 # Subtest: template renderer accepts non-note template without note
-not ok 48 - template renderer accepts non-note template without note
+ok 48 - template renderer accepts non-note template without note
   ---
-  duration_ms: 0.1254
+  duration_ms: 0.4571
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:18:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot read properties of undefined (reading 'TEMPLATE_1')"
-  code: 'ERR_TEST_FAILURE'
-  name: 'TypeError'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:20:28)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
   ...
 # Subtest: template renderer accepts note for template 3
-not ok 49 - template renderer accepts note for template 3
+ok 49 - template renderer accepts note for template 3
   ---
-  duration_ms: 0.0649
+  duration_ms: 0.1217
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:29:1'
-  failureType: 'testCodeFailure'
-  error: "Cannot read properties of undefined (reading 'TEMPLATE_3')"
-  code: 'ERR_TEST_FAILURE'
-  name: 'TypeError'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:31:28)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: template renderer rejects note for template 2
-not ok 50 - template renderer rejects note for template 2
+ok 50 - template renderer rejects note for template 2
   ---
-  duration_ms: 0.5694
+  duration_ms: 0.2622
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:40:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    The input did not match the regular expression /NOTE_NOT_ALLOWED_FOR_TEMPLATE/. Input:
-    
-    "TypeError: Cannot read properties of undefined (reading 'TEMPLATE_2')"
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-  actual:
-  error: "Cannot read properties of undefined (reading 'TEMPLATE_2')"
-  name: 'TypeError'
-  stack: |-
-    C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:43:30
-    getActual (node:assert:609:5)
-    Function.throws (node:assert:757:24)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:41:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  operator: 'throws'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:41:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: template renderer rejects multi-sentence note for template 5
-not ok 51 - template renderer rejects multi-sentence note for template 5
+ok 51 - template renderer rejects multi-sentence note for template 5
   ---
-  duration_ms: 0.1663
+  duration_ms: 0.1106
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:51:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    The input did not match the regular expression /MATTER_LEVEL_NOTE_MUST_BE_ONE_MECHANICAL_SENTENCE/. Input:
-    
-    "TypeError: Cannot read properties of undefined (reading 'TEMPLATE_5')"
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-  actual:
-  error: "Cannot read properties of undefined (reading 'TEMPLATE_5')"
-  name: 'TypeError'
-  stack: |-
-    C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:54:30
-    getActual (node:assert:609:5)
-    Function.throws (node:assert:757:24)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:52:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  operator: 'throws'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:52:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: template renderer requires matter id
-not ok 52 - template renderer requires matter id
+ok 52 - template renderer requires matter id
   ---
-  duration_ms: 0.1128
+  duration_ms: 0.0713
   type: 'test'
-  location: 'C:\\Users\\mskir\\Desktop\\ADFMIntakeCleanroom\\tests\\intake-template-validator.test.js:62:1'
-  failureType: 'testCodeFailure'
-  error: |-
-    The input did not match the regular expression /MATTER_ID_REQUIRED/. Input:
-    
-    "TypeError: Cannot read properties of undefined (reading 'TEMPLATE_6')"
-    
-  code: 'ERR_ASSERTION'
-  name: 'AssertionError'
-  expected:
-  actual:
-  error: "Cannot read properties of undefined (reading 'TEMPLATE_6')"
-  name: 'TypeError'
-  stack: |-
-    C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:65:30
-    getActual (node:assert:609:5)
-    Function.throws (node:assert:757:24)
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:63:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
-  operator: 'throws'
-  stack: |-
-    TestContext.<anonymous> (C:\Users\mskir\Desktop\ADFMIntakeCleanroom\tests\intake-template-validator.test.js:63:10)
-    Test.runInAsyncScope (node:async_hooks:214:14)
-    Test.run (node:internal/test_runner/test:1047:25)
-    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
-    Test.postRun (node:internal/test_runner/test:1173:19)
-    Test.run (node:internal/test_runner/test:1101:12)
-    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
   ...
 # Subtest: createMechanicalNoteRuleRecord accepts constrained run note with locked note_basis
 ok 53 - createMechanicalNoteRuleRecord accepts constrained run note with locked note_basis
   ---
-  duration_ms: 1.051
+  duration_ms: 1.0581
   type: 'test'
   ...
 # Subtest: createMechanicalNoteRuleRecord accepts insufficiently specified run note with locked note_basis
 ok 54 - createMechanicalNoteRuleRecord accepts insufficiently specified run note with locked note_basis
   ---
-  duration_ms: 0.13
+  duration_ms: 0.1339
   type: 'test'
   ...
 # Subtest: createMechanicalNoteRuleRecord rejects note on observed outcome
 ok 55 - createMechanicalNoteRuleRecord rejects note on observed outcome
   ---
-  duration_ms: 0.2783
+  duration_ms: 0.2776
   type: 'test'
   ...
 # Subtest: createMechanicalNoteRuleRecord rejects wrong note_basis for constrained run
 ok 56 - createMechanicalNoteRuleRecord rejects wrong note_basis for constrained run
   ---
-  duration_ms: 0.0919
+  duration_ms: 0.0968
   type: 'test'
   ...
 # Subtest: createStateIsolationRecord records explicit failure metadata
 ok 57 - createStateIsolationRecord records explicit failure metadata
   ---
-  duration_ms: 0.1673
+  duration_ms: 0.1704
   type: 'test'
   ...
 # Subtest: classifyIsolationFailure maps locked blocker to constrained outcome
 ok 58 - classifyIsolationFailure maps locked blocker to constrained outcome
   ---
-  duration_ms: 0.6725
+  duration_ms: 0.6303
   type: 'test'
   ...
 # Subtest: classifyIsolationFailure maps unmapped blocker to insufficiently specified outcome
 ok 59 - classifyIsolationFailure maps unmapped blocker to insufficiently specified outcome
   ---
-  duration_ms: 0.1536
+  duration_ms: 0.1557
   type: 'test'
   ...
 # Subtest: classifyIsolationFailure rejects invalid mapped constraint class
 ok 60 - classifyIsolationFailure rejects invalid mapped constraint class
   ---
-  duration_ms: 0.0925
+  duration_ms: 0.0945
   type: 'test'
   ...
 # Subtest: run record exposes the four locked outcomes and two locked context ids
 ok 61 - run record exposes the four locked outcomes and two locked context ids
   ---
-  duration_ms: 0.9507
+  duration_ms: 1.1605
   type: 'test'
   ...
 # Subtest: createRunRecord accepts a valid observed desktop run with internal timing fields
 ok 62 - createRunRecord accepts a valid observed desktop run with internal timing fields
   ---
-  duration_ms: 0.2275
+  duration_ms: 0.2281
   type: 'test'
   ...
 # Subtest: createRunRecord accepts a constrained run only with locked constraint_class and one mechanical sentence note
 ok 63 - createRunRecord accepts a constrained run only with locked constraint_class and one mechanical sentence note
   ---
-  duration_ms: 0.1443
+  duration_ms: 0.1408
   type: 'test'
   ...
 # Subtest: createRunRecord rejects note on observed outcome
 ok 64 - createRunRecord rejects note on observed outcome
   ---
-  duration_ms: 0.3362
+  duration_ms: 0.3274
   type: 'test'
   ...
 # Subtest: createRunRecord rejects constrained outcome without locked constraint_class
 ok 65 - createRunRecord rejects constrained outcome without locked constraint_class
   ---
-  duration_ms: 0.1713
+  duration_ms: 0.1462
   type: 'test'
   ...
 # Subtest: createRunRecord rejects invalid outcome label
 ok 66 - createRunRecord rejects invalid outcome label
   ---
-  duration_ms: 0.0902
+  duration_ms: 0.092
   type: 'test'
   ...
 # Subtest: buildSequencingPlan alternates Desktop then Mobile for dual-scope matters
 ok 67 - buildSequencingPlan alternates Desktop then Mobile for dual-scope matters
   ---
-  duration_ms: 0.2686
+  duration_ms: 0.2563
   type: 'test'
   ...
 # Subtest: buildSequencingPlan preserves desktop-only sequencing with no interleaving
 ok 68 - buildSequencingPlan preserves desktop-only sequencing with no interleaving
   ---
-  duration_ms: 0.0966
+  duration_ms: 0.0943
   type: 'test'
   ...
 # Subtest: buildSequencingPlan preserves mobile-only sequencing with no interleaving
 ok 69 - buildSequencingPlan preserves mobile-only sequencing with no interleaving
   ---
-  duration_ms: 0.1919
+  duration_ms: 0.1891
   type: 'test'
   ...
 # Subtest: buildSequencingPlan rejects non-alternating dual-scope inputs where a run unit is missing one baseline
 ok 70 - buildSequencingPlan rejects non-alternating dual-scope inputs where a run unit is missing one baseline
   ---
-  duration_ms: 0.2505
+  duration_ms: 0.2509
   type: 'test'
   ...
 # Subtest: locked constants are correct
 ok 71 - locked constants are correct
   ---
-  duration_ms: 0.5685
+  duration_ms: 0.5499
   type: 'test'
   ...
 # Subtest: only observed and not observed count as qualifying confirmations
 ok 72 - only observed and not observed count as qualifying confirmations
   ---
-  duration_ms: 0.2002
+  duration_ms: 0.1943
   type: 'test'
   ...
 # Subtest: same run_unit_id across distinct runs still satisfies sufficiency
 ok 73 - same run_unit_id across distinct runs still satisfies sufficiency
   ---
-  duration_ms: 0.127
+  duration_ms: 0.1224
   type: 'test'
   ...
 # Subtest: run cap reached without sufficiency stops on run_cap_reached
 ok 74 - run cap reached without sufficiency stops on run_cap_reached
   ---
-  duration_ms: 0.1611
+  duration_ms: 0.1582
   type: 'test'
   ...
 # Subtest: if sufficiency is reached on the 10th run, stop_basis is sufficiency_reached
 ok 75 - if sufficiency is reached on the 10th run, stop_basis is sufficiency_reached
   ---
-  duration_ms: 0.1097
+  duration_ms: 0.1087
   type: 'test'
   ...
 # Subtest: no post-stop execution is allowed after sufficiency
 ok 76 - no post-stop execution is allowed after sufficiency
   ---
-  duration_ms: 0.2909
+  duration_ms: 0.2793
   type: 'test'
   ...
 # Subtest: appendRunIfPermitted allows append before stop and returns updated progress
 ok 77 - appendRunIfPermitted allows append before stop and returns updated progress
   ---
-  duration_ms: 0.3061
+  duration_ms: 0.2243
   type: 'test'
   ...
 # Subtest: duplicate run ids are rejected
 ok 78 - duplicate run ids are rejected
   ---
-  duration_ms: 0.1168
+  duration_ms: 0.1025
   type: 'test'
   ...
 1..78
 # tests 78
 # suites 0
-# pass 61
-# fail 17
+# pass 71
+# fail 7
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 739.4882
+# duration_ms 747.3248

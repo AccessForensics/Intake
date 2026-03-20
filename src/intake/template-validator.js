@@ -2,112 +2,112 @@
 
 const fs = require("fs");
 const path = require("path");
+const {
+  DETERMINATION_TEMPLATE,
+  TEMPLATE_VALUES,
+  NOTE_ALLOWED_TEMPLATES,
+} = require("./enums.js");
 
-const TEMPLATE_WITH_NOTE = new Set([
-  "DETERMINATION: ELIGIBLE FOR DESKTOP TECHNICAL RECORD BUILD / MOBILE BASELINE: CONSTRAINED",
-  "DETERMINATION: ELIGIBLE FOR MOBILE TECHNICAL RECORD BUILD / DESKTOP BASELINE: CONSTRAINED",
-]);
-
-const LOCKED_DETERMINATIONS = Object.freeze([
-  "DETERMINATION: ELIGIBLE FOR DESKTOP AND MOBILE TECHNICAL RECORD BUILD",
-  "DETERMINATION: ELIGIBLE FOR DESKTOP TECHNICAL RECORD BUILD",
-  "DETERMINATION: ELIGIBLE FOR DESKTOP TECHNICAL RECORD BUILD / MOBILE BASELINE: CONSTRAINED",
-  "DETERMINATION: ELIGIBLE FOR MOBILE TECHNICAL RECORD BUILD",
-  "DETERMINATION: ELIGIBLE FOR MOBILE TECHNICAL RECORD BUILD / DESKTOP BASELINE: CONSTRAINED",
-  "DETERMINATION: NOT ELIGIBLE FOR FORENSIC EXECUTION",
-  "DETERMINATION: NOT ELIGIBLE FOR FORENSIC EXECUTION - CONSTRAINTS (BOTMITIGATION)",
-  "DETERMINATION: NOT ELIGIBLE FOR FORENSIC EXECUTION - CONSTRAINTS (OTHER)",
-]);
-
-function getTemplateSpecPath() {
-  return path.join(process.cwd(), "spec", "AFintaketemplates1-8.md");
+function getSpecTemplatePath(repoRoot = process.cwd()) {
+  return path.join(repoRoot, "spec", "AFintaketemplates1-8.md");
 }
 
-function loadTemplateSpec() {
-  return fs.readFileSync(getTemplateSpecPath(), "utf8").replace(/^\uFEFF/, "");
+function loadTemplateSpec(repoRoot = process.cwd()) {
+  const target = getSpecTemplatePath(repoRoot);
+  return fs.readFileSync(target, "utf8").replace(/^\uFEFF/, "");
 }
 
-function validateTemplateSpec(specTextInput) {
-  const specText = String(specTextInput || "").replace(/\r\n/g, "\n");
+function validateTemplateSpec(text) {
+  const body = String(text || "");
 
-  const hasLockedNoteHeading =
-    specText.includes("LOCKED NOTE RULE") ||
-    specText.includes("Internal implementation rule, not externally emitted:");
-
-  const hasMatterLevelNoteRule =
-    specText.includes("{{MATTER_LEVEL_NOTE}} may appear only in Template 3 or Template 5") &&
-    specText.includes("When present, it must be exactly one mechanical sentence stating the blocking condition only.") &&
-    specText.includes("If not authorized, omit it entirely.");
-
-  if (!hasLockedNoteHeading || !hasMatterLevelNoteRule) {
+  const internalRule = "Internal implementation rule, not externally emitted:";
+  if (!body.includes(internalRule)) {
     throw new Error("TEMPLATE_SPEC_MISSING_INTERNAL_NOTE_RULE");
   }
 
-  for (const determination of LOCKED_DETERMINATIONS) {
-    if (!specText.includes(determination)) {
-      throw new Error(`TEMPLATE_SPEC_MISSING_LOCKED_DETERMINATION: ${determination}`);
+  const noteRule = "{{MATTER_LEVEL_NOTE}} may appear only in Template 3 or Template 5";
+  if (!body.includes(noteRule)) {
+    throw new Error("TEMPLATE_SPEC_MISSING_LOCKED_NOTE_GATE");
+  }
+
+  const templateHeadings = [
+    "## TEMPLATE 1:",
+    "## TEMPLATE 2:",
+    "## TEMPLATE 3:",
+    "## TEMPLATE 4:",
+    "## TEMPLATE 5:",
+    "## TEMPLATE 6:",
+    "## TEMPLATE 7:",
+    "## TEMPLATE 8:",
+  ];
+
+  for (const heading of templateHeadings) {
+    if (!body.includes(heading)) {
+      throw new Error(`TEMPLATE_SPEC_MISSING_HEADING: ${heading}`);
     }
   }
 
-  return {
-    valid: true,
-    templateCount: LOCKED_DETERMINATIONS.length,
-  };
-}
-
-function assertSingleMechanicalSentence(note) {
-  const safe = String(note || "").trim();
-  if (!safe) {
-    throw new Error("MATTER_LEVEL_NOTE_REQUIRED");
+  for (const line of TEMPLATE_VALUES) {
+    if (!body.includes(line)) {
+      throw new Error(`TEMPLATE_SPEC_MISSING_DETERMINATION: ${line}`);
+    }
   }
 
-  const sentenceMatches = safe.match(/[.!?]+/g) || [];
-  if (sentenceMatches.length !== 1) {
-    throw new Error("MATTER_LEVEL_NOTE_MUST_BE_ONE_SENTENCE");
+  const forbiddenLegacy = /NEXT STEPS|WHAT IS REQUIRED TO REOPEN INTAKE|COUNSEL ACTION OPTION|REASON:/i;
+  if (forbiddenLegacy.test(body)) {
+    throw new Error("TEMPLATE_SPEC_CONTAINS_LEGACY_VERBOSE_SECTIONS");
   }
 
-  return safe;
+  return true;
 }
 
-function renderIntakeDetermination(args) {
-  const input = args || {};
-  const matterId = String(input.matterId || "").trim();
-  const determination = String(input.determination || "").trim();
-  const matterLevelNote = String(input.matterLevelNote || "").trim();
+function renderTemplate(templateValue, matterId, matterLevelNote = "") {
+  if (!TEMPLATE_VALUES.includes(templateValue)) {
+    throw new Error(`INVALID_TEMPLATE: ${templateValue}`);
+  }
 
-  if (!matterId) {
+  const safeMatterId = String(matterId || "").trim();
+  if (!safeMatterId) {
     throw new Error("MATTER_ID_REQUIRED");
   }
 
-  if (!LOCKED_DETERMINATIONS.includes(determination)) {
-    throw new Error(`INVALID_DETERMINATION_TEMPLATE: ${determination}`);
+  const safeNote = String(matterLevelNote || "").trim();
+  const noteAllowed = NOTE_ALLOWED_TEMPLATES.has(templateValue);
+
+  if (!noteAllowed && safeNote) {
+    throw new Error("NOTE_NOT_ALLOWED_FOR_TEMPLATE");
   }
 
-  if (matterLevelNote) {
-    if (!TEMPLATE_WITH_NOTE.has(determination)) {
-      throw new Error("MATTER_LEVEL_NOTE_NOT_ALLOWED_FOR_TEMPLATE");
+  if (noteAllowed && safeNote) {
+    const sentenceCount = safeNote
+      .split(/[.!?]+/)
+      .map((part) => part.trim())
+      .filter(Boolean).length;
+
+    if (sentenceCount !== 1) {
+      throw new Error("MATTER_LEVEL_NOTE_MUST_BE_ONE_MECHANICAL_SENTENCE");
     }
-    assertSingleMechanicalSentence(matterLevelNote);
   }
 
   const lines = [
     "ACCESS FORENSICS",
     "INTAKE DETERMINATION",
-    `MATTER ID: ${matterId}`,
+    `MATTER ID: ${safeMatterId}`,
     "",
-    determination,
+    templateValue,
   ];
 
-  if (matterLevelNote) {
-    lines.push("", matterLevelNote);
+  if (noteAllowed && safeNote) {
+    lines.push("", safeNote);
   }
 
   return lines.join("\n");
 }
 
 module.exports = Object.freeze({
-  LOCKED_DETERMINATIONS,
   loadTemplateSpec,
   validateTemplateSpec,
-  renderIntakeDetermination,
+  renderTemplate,
+  getSpecTemplatePath,
+  DETERMINATION_TEMPLATE,
 });
