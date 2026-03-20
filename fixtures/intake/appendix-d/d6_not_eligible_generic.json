@@ -1,0 +1,152 @@
+{
+  "fixture_id": "fixture_6_not_eligible_generic",
+  "matter_id": "AF-2026-D6",
+  "matter_scope": "dual",
+  "scope_anchor_reference": "Complaint PDF dated 2026-03-19, pp. 13-15",
+  "created_context_basis": "generic_accessibility_allegation",
+  "generated_at_local": "2026-03-19T12:50:00-04:00",
+  "generated_at_epoch_ms": 1710867000000,
+  "complaint_anchors": [
+    {
+      "anchorType": "pagebulletrange",
+      "pageBulletRange": "13:1-5",
+      "anchorText": "- Missing trigger path one`n- Missing trigger path two`n- Missing trigger path three`n- Missing trigger path four`n- Missing trigger path five"
+    }
+  ],
+  "expected_sequence": [
+    { "run_unit_id": "RU-001", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-001", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-003", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-003", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-004", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-004", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-005", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-005", "context_id": "mobile_baseline" }
+  ],
+  "run_execution_plan": [
+    {
+      "run_id": "RUN-001",
+      "run_unit_index": 0,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:00-04:00",
+      "run_start_epoch_ms": 25000,
+      "run_end_local": "2026-03-19T12:50:01-04:00",
+      "run_end_epoch_ms": 26000
+    },
+    {
+      "run_id": "RUN-002",
+      "run_unit_index": 0,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:02-04:00",
+      "run_start_epoch_ms": 27000,
+      "run_end_local": "2026-03-19T12:50:03-04:00",
+      "run_end_epoch_ms": 28000
+    },
+    {
+      "run_id": "RUN-003",
+      "run_unit_index": 1,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:04-04:00",
+      "run_start_epoch_ms": 29000,
+      "run_end_local": "2026-03-19T12:50:05-04:00",
+      "run_end_epoch_ms": 30000
+    },
+    {
+      "run_id": "RUN-004",
+      "run_unit_index": 1,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:06-04:00",
+      "run_start_epoch_ms": 31000,
+      "run_end_local": "2026-03-19T12:50:07-04:00",
+      "run_end_epoch_ms": 32000
+    },
+    {
+      "run_id": "RUN-005",
+      "run_unit_index": 2,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:08-04:00",
+      "run_start_epoch_ms": 33000,
+      "run_end_local": "2026-03-19T12:50:09-04:00",
+      "run_end_epoch_ms": 34000
+    },
+    {
+      "run_id": "RUN-006",
+      "run_unit_index": 2,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:10-04:00",
+      "run_start_epoch_ms": 35000,
+      "run_end_local": "2026-03-19T12:50:11-04:00",
+      "run_end_epoch_ms": 36000
+    },
+    {
+      "run_id": "RUN-007",
+      "run_unit_index": 3,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:12-04:00",
+      "run_start_epoch_ms": 37000,
+      "run_end_local": "2026-03-19T12:50:13-04:00",
+      "run_end_epoch_ms": 38000
+    },
+    {
+      "run_id": "RUN-008",
+      "run_unit_index": 3,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:14-04:00",
+      "run_start_epoch_ms": 39000,
+      "run_end_local": "2026-03-19T12:50:15-04:00",
+      "run_end_epoch_ms": 40000
+    },
+    {
+      "run_id": "RUN-009",
+      "run_unit_index": 4,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:16-04:00",
+      "run_start_epoch_ms": 41000,
+      "run_end_local": "2026-03-19T12:50:17-04:00",
+      "run_end_epoch_ms": 42000
+    },
+    {
+      "run_id": "RUN-010",
+      "run_unit_index": 4,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Insufficiently specified for bounded execution",
+      "constraint_class": "",
+      "mechanical_note": "Missing bounded path to trigger the asserted condition.",
+      "run_start_local": "2026-03-19T12:50:18-04:00",
+      "run_start_epoch_ms": 43000,
+      "run_end_local": "2026-03-19T12:50:19-04:00",
+      "run_end_epoch_ms": 44000
+    }
+  ],
+  "expected_determination_template": "DETERMINATION: NOT ELIGIBLE FOR FORENSIC EXECUTION",
+  "expected_stop_basis": "run_cap_reached"
+}

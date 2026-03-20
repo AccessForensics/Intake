@@ -1,0 +1,152 @@
+{
+  "fixture_id": "fixture_8_not_eligible_constraints_other",
+  "matter_id": "AF-2026-D8",
+  "matter_scope": "dual",
+  "scope_anchor_reference": "Complaint PDF dated 2026-03-19, pp. 19-21",
+  "created_context_basis": "generic_accessibility_allegation",
+  "generated_at_local": "2026-03-19T13:10:00-04:00",
+  "generated_at_epoch_ms": 1710868200000,
+  "complaint_anchors": [
+    {
+      "anchorType": "pagebulletrange",
+      "pageBulletRange": "19:1-5",
+      "anchorText": "- Authwall block one`n- Authwall block two`n- Authwall block three`n- Authwall block four`n- Authwall block five"
+    }
+  ],
+  "expected_sequence": [
+    { "run_unit_id": "RU-001", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-001", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-003", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-003", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-004", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-004", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-005", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-005", "context_id": "mobile_baseline" }
+  ],
+  "run_execution_plan": [
+    {
+      "run_id": "RUN-001",
+      "run_unit_index": 0,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Desktop baseline access.",
+      "run_start_local": "2026-03-19T13:10:00-04:00",
+      "run_start_epoch_ms": 65000,
+      "run_end_local": "2026-03-19T13:10:01-04:00",
+      "run_end_epoch_ms": 66000
+    },
+    {
+      "run_id": "RUN-002",
+      "run_unit_index": 0,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+      "run_start_local": "2026-03-19T13:10:02-04:00",
+      "run_start_epoch_ms": 67000,
+      "run_end_local": "2026-03-19T13:10:03-04:00",
+      "run_end_epoch_ms": 68000
+    },
+    {
+      "run_id": "RUN-003",
+      "run_unit_index": 1,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Desktop baseline access.",
+      "run_start_local": "2026-03-19T13:10:04-04:00",
+      "run_start_epoch_ms": 69000,
+      "run_end_local": "2026-03-19T13:10:05-04:00",
+      "run_end_epoch_ms": 70000
+    },
+    {
+      "run_id": "RUN-004",
+      "run_unit_index": 1,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+      "run_start_local": "2026-03-19T13:10:06-04:00",
+      "run_start_epoch_ms": 71000,
+      "run_end_local": "2026-03-19T13:10:07-04:00",
+      "run_end_epoch_ms": 72000
+    },
+    {
+      "run_id": "RUN-005",
+      "run_unit_index": 2,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Desktop baseline access.",
+      "run_start_local": "2026-03-19T13:10:08-04:00",
+      "run_start_epoch_ms": 73000,
+      "run_end_local": "2026-03-19T13:10:09-04:00",
+      "run_end_epoch_ms": 74000
+    },
+    {
+      "run_id": "RUN-006",
+      "run_unit_index": 2,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+      "run_start_local": "2026-03-19T13:10:10-04:00",
+      "run_start_epoch_ms": 75000,
+      "run_end_local": "2026-03-19T13:10:11-04:00",
+      "run_end_epoch_ms": 76000
+    },
+    {
+      "run_id": "RUN-007",
+      "run_unit_index": 3,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Desktop baseline access.",
+      "run_start_local": "2026-03-19T13:10:12-04:00",
+      "run_start_epoch_ms": 77000,
+      "run_end_local": "2026-03-19T13:10:13-04:00",
+      "run_end_epoch_ms": 78000
+    },
+    {
+      "run_id": "RUN-008",
+      "run_unit_index": 3,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+      "run_start_local": "2026-03-19T13:10:14-04:00",
+      "run_start_epoch_ms": 79000,
+      "run_end_local": "2026-03-19T13:10:15-04:00",
+      "run_end_epoch_ms": 80000
+    },
+    {
+      "run_id": "RUN-009",
+      "run_unit_index": 4,
+      "context_id": "desktop_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Desktop baseline access.",
+      "run_start_local": "2026-03-19T13:10:16-04:00",
+      "run_start_epoch_ms": 81000,
+      "run_end_local": "2026-03-19T13:10:17-04:00",
+      "run_end_epoch_ms": 82000
+    },
+    {
+      "run_id": "RUN-010",
+      "run_unit_index": 4,
+      "context_id": "mobile_baseline",
+      "outcome_label": "Constrained",
+      "constraint_class": "AUTHWALL",
+      "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+      "run_start_local": "2026-03-19T13:10:18-04:00",
+      "run_start_epoch_ms": 83000,
+      "run_end_local": "2026-03-19T13:10:19-04:00",
+      "run_end_epoch_ms": 84000
+    }
+  ],
+  "expected_determination_template": "DETERMINATION: NOT ELIGIBLE FOR FORENSIC EXECUTION - CONSTRAINTS (OTHER)",
+  "expected_stop_basis": "run_cap_reached"
+}

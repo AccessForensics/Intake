@@ -46,21 +46,24 @@
       "appendix_d_reference": "D.6",
       "purpose": "proves non-eligibility without constraint-specific template",
       "expected_state": "Template 6",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d6_not_eligible_generic.json"
     },
     {
       "fixture_id": "fixture_7_not_eligible_botmitigation",
       "appendix_d_reference": "D.7",
       "purpose": "proves Template 7",
       "expected_state": "Template 7",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d7_not_eligible_botmitigation.json"
     },
     {
       "fixture_id": "fixture_8_not_eligible_constraints_other",
       "appendix_d_reference": "D.8",
       "purpose": "proves Template 8",
       "expected_state": "Template 8",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d8_not_eligible_constraints_other.json"
     },
     {
       "fixture_id": "fixture_9_note_gated_constrained_run",
