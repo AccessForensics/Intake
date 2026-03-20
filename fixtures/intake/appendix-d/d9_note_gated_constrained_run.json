@@ -1,0 +1,24 @@
+{
+  "fixture_id": "fixture_9_note_gated_constrained_run",
+  "run_record_input": {
+    "runIndex": 1,
+    "matter_id": "AF-2026-D9",
+    "complaint_group_anchor_id": "CGA-001",
+    "run_unit_id": "RU-001",
+    "context_id": "mobile_baseline",
+    "outcome_label": "Constrained",
+    "constraint_class": "AUTHWALL",
+    "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access.",
+    "run_start_local": "2026-03-19T13:20:00-04:00",
+    "run_start_epoch_ms": 85000,
+    "run_end_local": "2026-03-19T13:20:01-04:00",
+    "run_end_epoch_ms": 86000
+  },
+  "note_rule_input": {
+    "note_rule_index": 1,
+    "run_id": "RUN-001",
+    "outcome_label": "Constrained",
+    "note_basis": "outcome_constrained",
+    "mechanical_note": "AUTHWALL blocked bounded Mobile baseline access."
+  }
+}

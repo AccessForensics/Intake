@@ -70,35 +70,40 @@
       "appendix_d_reference": "D.9",
       "purpose": "proves notes only appear when permitted",
       "expected_state": "note passes validation",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d9_note_gated_constrained_run.json"
     },
     {
       "fixture_id": "fixture_10_invalid_note_on_observed_run",
       "appendix_d_reference": "D.10",
       "purpose": "proves prohibited note attachment fails",
       "expected_state": "validation failure",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d10_invalid_note_on_observed_run.json"
     },
     {
       "fixture_id": "fixture_11_non_alternating_sequencing_failure",
       "appendix_d_reference": "D.11",
       "purpose": "proves sequencing enforcement",
       "expected_state": "validation failure",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d11_non_alternating_sequencing_failure.json"
     },
     {
       "fixture_id": "fixture_12_state_persistence_failure",
       "appendix_d_reference": "D.12",
       "purpose": "proves clean-state isolation enforcement",
       "expected_state": "validation failure",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d12_state_persistence_failure.json"
     },
     {
       "fixture_id": "fixture_13_indirect_signaling_output_failure",
       "appendix_d_reference": "D.13",
       "purpose": "proves external wording validation rejects internal-depth phrasing",
       "expected_state": "validation failure",
-      "status": "not_implemented_yet"
+      "status": "implemented",
+      "fixture_path": "fixtures/intake/appendix-d/d13_indirect_signaling_output_failure.json"
     }
   ]
 }

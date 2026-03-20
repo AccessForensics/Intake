@@ -1,0 +1,15 @@
+{
+  "fixture_id": "fixture_11_non_alternating_sequencing_failure",
+  "matter_scope": "dual",
+  "run_units": [
+    { "rununitid": "RU-001", "desktopinscope": true, "mobileinscope": true },
+    { "rununitid": "RU-002", "desktopinscope": true, "mobileinscope": true }
+  ],
+  "invalid_observed_sequence": [
+    { "run_unit_id": "RU-001", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "desktop_baseline" },
+    { "run_unit_id": "RU-001", "context_id": "mobile_baseline" },
+    { "run_unit_id": "RU-002", "context_id": "mobile_baseline" }
+  ],
+  "expected_error": "SEQUENCING_MISMATCH"
+}

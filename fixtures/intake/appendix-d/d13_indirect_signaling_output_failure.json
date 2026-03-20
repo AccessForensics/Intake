@@ -1,0 +1,11 @@
+{
+  "fixture_id": "fixture_13_indirect_signaling_output_failure",
+  "determination_record": {
+    "matter_id": "AF-2026-D13",
+    "determination_template": "DETERMINATION: ELIGIBLE FOR MOBILE TECHNICAL RECORD BUILD",
+    "generated_at_local": "2026-03-19T13:40:00-04:00",
+    "generated_at_epoch_ms": 1710870000000,
+    "matter_level_note": ""
+  },
+  "output_text": "ACCESS FORENSICS\nINTAKE DETERMINATION\nMATTER ID: AF-2026-D13\n\nDETERMINATION: ELIGIBLE FOR MOBILE TECHNICAL RECORD BUILD\nExtensive testing was completed."
+}

@@ -1,0 +1,18 @@
+{
+  "fixture_id": "fixture_10_invalid_note_on_observed_run",
+  "run_record_input": {
+    "runIndex": 1,
+    "matter_id": "AF-2026-D10",
+    "complaint_group_anchor_id": "CGA-001",
+    "run_unit_id": "RU-001",
+    "context_id": "desktop_baseline",
+    "outcome_label": "Observed as asserted",
+    "constraint_class": "",
+    "mechanical_note": "This should not be allowed.",
+    "run_start_local": "2026-03-19T13:30:00-04:00",
+    "run_start_epoch_ms": 87000,
+    "run_end_local": "2026-03-19T13:30:01-04:00",
+    "run_end_epoch_ms": 88000
+  },
+  "expected_error": "NOTE_NOT_ALLOWED_FOR_OUTCOME"
+}
